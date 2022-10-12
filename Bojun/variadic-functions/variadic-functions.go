@@ -8,6 +8,7 @@ func sum(nums ...int) {
 	for _, num := range nums {
 		total += num
 	}
+	nums[0] = 100
 	fmt.Println(total)
 }
 
@@ -17,5 +18,5 @@ func main() {
 	b := []int{1, 2, 3, 4, 5}
 
 	sum(b...)
-
+	fmt.Println(b)
 }
