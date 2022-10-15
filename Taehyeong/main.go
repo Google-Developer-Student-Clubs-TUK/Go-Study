@@ -1,7 +1,7 @@
 package main
 
-import "fmt"
+import "runner/gobyexample"
 
 func main() {
-	fmt.Println("hello world")
+	gobyexample.PrintExample("maps")
 }
