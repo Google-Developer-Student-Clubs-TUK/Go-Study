@@ -40,3 +40,9 @@ func examineRune(r rune) { //룬 -> 문자열의 유니코드 코드 포인트
 		fmt.Println("found so sua")
 	}
 }
+
+// strings -> char의 배열, string -> byte배열 사용 (rune의 UTF-8로 인코딩)
+// string의 배열 -> UTF-8로 인코딩된 룬을 배열로
+// byte배열 상태로 가지고 있다가 print할때 룬으로 인코딩해줘서
+// 기본적으로 Rune형태가 아니고 byte자체를 인코딩하면 rune이 된다.
+// 영어는 1바이트, 다른 글자는 3바이트 (한글)
