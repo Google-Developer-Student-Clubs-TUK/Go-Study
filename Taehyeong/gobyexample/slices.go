@@ -50,7 +50,7 @@ func slices() {
 	t := []string{"g", "h", "i"}
 	fmt.Println("dcl:", t)
 
-    // 다중 slice도 구성가능
+	// 다중 slice도 구성가능
 	twoD := make([][]int, 3)
 	for i := 0; i < 3; i++ {
 		innerLen := i + 1

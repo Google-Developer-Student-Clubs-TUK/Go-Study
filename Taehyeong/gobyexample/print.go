@@ -22,31 +22,33 @@ func PrintExample(s string) {
 		slices()
 	case "maps":
 		maps()
-		// case "range":
-		// 	range()
-		// case "functions":
-		// 	functions()
-		// case "multiple_return_values":
-		// 	multipleReturnValues()
-		// case "variadic_functions":
-		// 	variadicFunctions()
-		// case "closures":
-		// 	closures()
-		// case "recursion":
-		// 	recursion()
-		// case "pointers":
-		// 	pointers()
-		// case "strings_and_runes":
-		// 	stringsAndRunes()
-		// case "structs":
-		// 	structs()
-		// case "methods":
-		// 	methods()
-		// case "interfaces":
-		// 	interfaces()
-		// case "struct_embedding":
-		// 	structEmbedding()
-		// case "generics":
-		// 	generics()
+	case "range":
+		rangeFunction()
+	case "functions":
+		functions()
+	case "multiple_return_values":
+		multipleReturnValues()
+	case "variadic_functions":
+		variadicFunctions()
+	case "closures":
+		closures()
+	case "recursion":
+		recursion()
+	case "pointers":
+		pointers()
+	case "strings_and_runes":
+		stringsAndRunes()
+	case "structs":
+		structs()
+	case "methods":
+		methods()
+	case "interfaces":
+		interfaces()
+	case "struct_embedding":
+		structEmbedding()
+	case "generics":
+		generics()
+	default:
+		println("올바른 파일명을 입력해주세요")
 	}
 }
