@@ -16,14 +16,6 @@ func main() {
 	var e int
 	fmt.Println(e)
 
-	var g string
-	fmt.Println(g)
-
-	var h string = ""
-	fmt.Println(h)
-
-	fmt.Println(g == "")
-
 	f := "apple"
 	fmt.Println(f)
 
