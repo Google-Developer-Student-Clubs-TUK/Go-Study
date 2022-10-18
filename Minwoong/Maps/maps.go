@@ -19,7 +19,7 @@ func main() {
 	delete(m, "k2")
 	fmt.Println("map:", m)
 
-	_, prs := m["k2"]
+	_, prs := m["k1"]
 	fmt.Println("prs:", prs)
 
 	n := map[string]int{"foo": 1, "bar": 2}
