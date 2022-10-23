@@ -19,6 +19,7 @@ func main() {
 	}()
 	stop2 := timer2.Stop()
 	if stop2 {
+		fmt.Println(stop2)
 		fmt.Println("Timer 2 stopped")
 	}
 
