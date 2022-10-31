@@ -6,15 +6,13 @@ import (
 	"time"
 )
 
-func workerA(id int) {
+func worker(id int) {
 	fmt.Printf("Worker %d starting\n", id)
-
 	time.Sleep(time.Second)
 	fmt.Printf("Worker %d done\n", id)
 }
 
 func main() {
-
 	var wg sync.WaitGroup
 
 	for i := 1; i <= 5; i++ {
@@ -24,10 +22,9 @@ func main() {
 
 		go func() {
 			defer wg.Done()
-			workerA(i)
+			worker(i)
 		}()
 	}
-
 	wg.Wait()
 
 }
