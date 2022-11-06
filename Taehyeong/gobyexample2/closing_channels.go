@@ -11,6 +11,7 @@ func closingChannels() {
 			j, more := <-jobs
 			if more {
 				fmt.Println("received job", j)
+				// more 값이 flase이면 close
 			} else {
 				fmt.Println("received all jobs")
 				done <- true
@@ -23,6 +24,7 @@ func closingChannels() {
 		jobs <- j
 		fmt.Println("sent job", j)
 	}
+	// close 실행시 more은 false
 	close(jobs)
 	fmt.Println("sent all jobs")
 

@@ -7,5 +7,5 @@
 
 ## 1. Go By Example
 - link: https://gobyexample.com
-- package: gobyexample
+- package: gobyexample, gobyexample2
 - exec: exam.PrintExample("파일명")
