@@ -11,6 +11,6 @@ func main() {
 	gobyexample.PrintExample("generics")
 
 	router := gin.Default()
-	album.Service(router)
+	album.Service(router.Group("/albums"))
 	router.Run("localhost:8080")
 }

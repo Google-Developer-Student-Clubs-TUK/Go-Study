@@ -6,10 +6,10 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func Service(router *gin.Engine) {
-	router.GET("/albums", getAlbums)
-	router.GET("/albums/:id", getAlbumByID)
-	router.POST("/albums", postAlbums)
+func Service(rg *gin.RouterGroup) {
+	rg.GET("/", getAlbums)
+	rg.GET("/:id", getAlbumByID)
+	rg.POST("/", postAlbums)
 }
 
 func getAlbums(c *gin.Context) {
