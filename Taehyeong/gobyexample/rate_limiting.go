@@ -1,4 +1,4 @@
-package gobyexample2
+package gobyexample
 
 import (
 	"fmt"
