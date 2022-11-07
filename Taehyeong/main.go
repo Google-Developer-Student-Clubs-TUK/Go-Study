@@ -3,10 +3,14 @@ package main
 import (
 	"runner/album"
 	"runner/gobyexample"
+
+	"github.com/gin-gonic/gin"
 )
 
 func main() {
 	gobyexample.PrintExample("generics")
 
-	album.Service()
+	router := gin.Default()
+	album.Service(router)
+	router.Run("localhost:8080")
 }
