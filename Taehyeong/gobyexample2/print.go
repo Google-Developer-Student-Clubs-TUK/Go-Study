@@ -44,14 +44,14 @@ func PrintExample(s string) {
 		sortingByFunctions()
 	case "panic":
 		panicFunction()
-	// case "defer":
-	// 	deferFuntion()
-	// case "recover":
-	// 	recover()
-	// case "string_functions":
-	// 	stringFunctions()
-	// case "string_formatting":
-	// 	stringFormatting()
+	case "defer":
+		deferFuntion()
+	case "recover":
+		recoverFunction()
+	case "string_functions":
+		stringFunctions()
+	case "string_formatting":
+		stringFormatting()
 	default:
 		println("올바른 파일명을 입력해주세요")
 	}
