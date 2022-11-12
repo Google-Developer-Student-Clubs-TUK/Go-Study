@@ -22,10 +22,10 @@ func main() {
 
 		i := i
 
-		go func() {
+		go func(i int) {
 			defer wg.Done()
 			worker(i)
-		}()
+		}(i)
 	}
 
 	wg.Wait()
