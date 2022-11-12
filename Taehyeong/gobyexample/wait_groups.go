@@ -1,4 +1,4 @@
-package main
+package gobyexample
 
 import (
 	"fmt"
@@ -6,15 +6,15 @@ import (
 	"time"
 )
 
-func workerA(id int) {
+func worker3(id int) {
 	fmt.Printf("Worker %d starting\n", id)
 
 	time.Sleep(time.Second)
 	fmt.Printf("Worker %d done\n", id)
 }
 
-func main() {
-
+func waitGroups() {
+	// 모든 고루틴이 끝날때까지 기다리게함
 	var wg sync.WaitGroup
 
 	for i := 1; i <= 5; i++ {
@@ -24,10 +24,10 @@ func main() {
 
 		go func() {
 			defer wg.Done()
-			workerA(i)
+			worker3(i)
 		}()
 	}
 
+	// 포인터를 쓰지않고도 끝날때까지 기다림
 	wg.Wait()
-
 }

@@ -8,4 +8,10 @@
 ## 1. Go By Example
 - link: https://gobyexample.com
 - package: gobyexample
-- exec: exam.PrintExample("파일명")
+- exec: gobyexample.PrintExample("파일명")
+
+## 2. Album (gin)
+- link: https://go.dev/doc/tutorial/web-service-gin
+- package: album
+- exec: album.Service()
+- gin 을 이용해 album api 서비스 구축
