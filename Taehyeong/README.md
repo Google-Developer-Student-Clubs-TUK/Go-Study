@@ -14,10 +14,10 @@
 - link: https://go.dev/doc/tutorial/web-service-gin
 - package: album
 - exec: album.Run()
-- gin 을 이용해 album api 서비스 구축
+- gin 을 이용해 album 웹서버 구축
 
-## 3. DB_Server(gorm) - Todo
+## 3. DB_Server(gorm v2) - todo
 - link: https://thedevsaddam.medium.com/build-restful-api-service-in-golang-using-gin-gonic-framework-85b1a6e176f3
 - package: todo
 - exec: todo.Run()
-- gin 을 이용해 album api 서비스 구축
+- gorm_v2(mysql) 과 gin을 이용해 todo 웹서버 구현
