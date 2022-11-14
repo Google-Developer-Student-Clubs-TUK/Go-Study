@@ -10,8 +10,14 @@
 - package: gobyexample
 - exec: gobyexample.PrintExample("파일명")
 
-## 2. Album (gin)
+## 2. Web_Service(gin) - album
 - link: https://go.dev/doc/tutorial/web-service-gin
 - package: album
 - exec: album.Service()
+- gin 을 이용해 album api 서비스 구축
+
+## 3. DB_Service(gorm) - Todo
+- link: https://thedevsaddam.medium.com/build-restful-api-service-in-golang-using-gin-gonic-framework-85b1a6e176f3
+- package: todo
+- exec: todo.Service()
 - gin 을 이용해 album api 서비스 구축
