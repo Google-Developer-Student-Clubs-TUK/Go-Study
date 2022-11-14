@@ -7,12 +7,17 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func Service(rg *gin.RouterGroup) {
-	rg.POST("/", createTodo)
-	rg.GET("/", fetchAllTodo)
-	rg.GET("/:id", fetchSingleTodo)
-	rg.PUT("/:id", updateTodo)
-	rg.DELETE("/:id", deleteTodo)
+func Run() {
+	router := gin.Default()
+	todoGroup := router.Group("/todos")
+	{
+		todoGroup.POST("/", createTodo)
+		todoGroup.GET("/", fetchAllTodo)
+		todoGroup.GET("/:id", fetchSingleTodo)
+		todoGroup.PUT("/:id", updateTodo)
+		todoGroup.DELETE("/:id", deleteTodo)
+	}
+	router.Run("localhost:8080")
 }
 
 // createTodo add a new todo
