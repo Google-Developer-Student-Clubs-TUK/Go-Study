@@ -2,6 +2,11 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
+	"github.com/jinzhu/gorm"
+
+	//"github.com/go-gorm/gorm"
+	//"github.com/jinzhu/gorm"
+	_ "github.com/jinzhu/gorm/dialects/mysql"
 	"net/http"
 )
 
@@ -22,15 +27,52 @@ func getAlbums(c *gin.Context) {
 	c.IndentedJSON(http.StatusOK, albums)
 }
 
+type (
+	todoModel struct {
+		gorm.Model
+		Title     string `json:"title"`
+		Completed int    `json:"completed"`
+	}
+	transformedTodo struct {
+		ID        uint   `json:"id"`
+		Title     string `json:"title"`
+		Completed bool   `json:"completed"`
+	}
+)
+
+var db *gorm.DB
+
+func init() {
+
+	var err error
+	db, err = gorm.Open("mysql", "root:1234@/mysql?charset=utf8&parseTime=True&loc=Local")
+	if err != nil {
+		panic("failed to connect database")
+	}
+	db.AutoMigrate(&todoModel{})
+}
+
 func main() {
 	router := gin.Default()
+	//############게시판 만들기################
 	router.GET("/albums", getAlbums)
 	router.POST("/albums", postAlbums)
 	router.GET("/albums/:id", getAlbumByID)
-
+	//###########ORM 실습###################
+	//v1 = router.Group("/api/v1/todos")
+	//{
+	//	v1.POST("/", createTodo)
+	//	v1.Get("/", fetchAllToDo)
+	//	v1.GET("/:id", fetchSingleTodo)
+	//	v1.PUT("/:id", updateTodo)
+	//	v1.DELETE("/:id", deleteTodo)
+	//
+	//}
 	router.Run("localhost:8080")
+
 }
 
+// ##################앨범 CRUD##########################
 func postAlbums(c *gin.Context) {
 	var newAlbum album
 
@@ -52,3 +94,5 @@ func getAlbumByID(c *gin.Context) {
 	}
 	c.IndentedJSON(http.StatusNotFound, gin.H{"message": "album not found"})
 }
+
+//################## GORM ##########################
