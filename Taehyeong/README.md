@@ -21,3 +21,9 @@
 - package: todo
 - exec: todo.Run()
 - gorm_v2(mysql) 과 gin을 이용해 todo 웹서버 구현
+
+## 4. tukorea eclass 크롤링
+- link: https://eclass.tukorea.ac.kr/ilos/main/main_form.acl
+- package: tukorea
+- exec: tukorea.Run()
+- eclass 에서 로그인 및 시간표 가져오기 구현
